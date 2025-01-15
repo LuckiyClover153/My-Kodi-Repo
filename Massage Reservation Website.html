@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massage Reservation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fdfcf7;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        form input, form select, form button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #ff5e62;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: #ff9966;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #ff5e62;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Massage Reservation</h1>
+        <p>Relax, Rejuvenate, and Refresh - Exclusively for Dad</p>
+    </header>
+
+    <div class="image-container">
+        <img src="https://raw.githubusercontent.com/LuckiyClover153/My-Kodi-Repo/refs/heads/main/20250114_222922.jpg" alt="Baby bear massaging daddy bear">
+    </div>
+
+    <div class="container">
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="service">Choose a Service</label>
+            <select id="service" name="service" required>
+                <option value="Relaxing Full-Body Massage">Relaxing Full-Body Massage</option>
+                <option value="Shoulder and Neck Massage">Shoulder and Neck Massage</option>
+                <option value="Foot Reflexology">Foot Reflexology</option>
+            </select>
+
+            <button type="button" onclick="sendEmail()">Reserve Now</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Massage Reservation | Exclusively for Dad</p>
+    </footer>
+
+    <script>
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const service = document.getElementById('service').value;
+
+            const subject = `Massage Reservation for ${name}`;
+            const body = `
+Dear Lucky Jupiter,
+
+Reservation Details:
+- Name: ${name}
+- Preferred Date: ${date}
+- Preferred Time: ${time}
+- Selected Service: ${service}
+
+Thank you,
+Your Client
+`;
+
+            const mailtoLink = `mailto:luckyjupiter153@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
